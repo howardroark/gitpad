@@ -5,7 +5,8 @@ var app = express();
 app.use(express.static('public'));
 
 app.get('/callback', function (req, res) {
-  res.send(req.params);
+  var code = req.params.code;
+  res.send(code);
 });
 
 app.listen(process.env.PORT || 3000);
