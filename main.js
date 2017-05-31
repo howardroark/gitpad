@@ -15,7 +15,7 @@ app.get('/callback', function (req, res) {
       client_id: process.env.CLIENT_ID,
       client_secrent: process.env.CLIENT_SECRET
     },
-    function (result) {
+    function (err, result) {
       accessToken = result.access_token;
       res.send(accessToken);
     }
