@@ -17,10 +17,11 @@ app.get('/callback', function (req, res) {
   };
   request(options)
     .then(function (response) {
-      res.send(response);
+      res.redirect('/?' + response);
     })
     .catch(function (err) {
-      res.send(err);
+      console.log(err);
+      res.sendStatus(500);
     });
 });
 
