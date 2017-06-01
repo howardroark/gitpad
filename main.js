@@ -13,12 +13,11 @@ app.get('/callback', function (req, res) {
     {
       code: code,
       client_id: process.env.CLIENT_ID,
-      client_secrent: process.env.CLIENT_SECRET
+      client_secret: process.env.CLIENT_SECRET
     },
     function (err, result) {
-      console.log(err, result);
       accessToken = result.access_token;
-      res.send(accessToken);
+      res.send(result);
     }
   );
 });
