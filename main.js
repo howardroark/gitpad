@@ -17,7 +17,7 @@ app.get('/callback', function (req, res) {
   };
   request(options)
     .then(function (response) {
-      res.redirect('/?' + response);
+      res.redirect('/#' + response);
     })
     .catch(function (err) {
       console.log(err);
